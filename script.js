@@ -62,6 +62,9 @@ if (canvas && startButton && pauseButton && restartButton && scoreElement && hig
 
   function setStatus(message) {
     statusElement.textContent = message;
+    statusElement.classList.toggle('is-active', message === '진행 중');
+    statusElement.classList.toggle('is-paused', message === '일시정지');
+    statusElement.classList.toggle('is-over', message === '게임 오버');
   }
 
   function resetGame() {
@@ -210,6 +213,9 @@ if (canvas && startButton && pauseButton && restartButton && scoreElement && hig
   startButton.addEventListener('click', startGame);
   pauseButton.addEventListener('click', togglePause);
   restartButton.addEventListener('click', restartGame);
+  startButton.addEventListener('pointerup', startGame);
+  pauseButton.addEventListener('pointerup', togglePause);
+  restartButton.addEventListener('pointerup', restartGame);
 
   resetGame();
   setStatus('시작 전');

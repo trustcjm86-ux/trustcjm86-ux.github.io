@@ -70,9 +70,14 @@ h2 { font-size: clamp(1.8rem, 4vw, 3.2rem); }
 .game-meta { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; margin-bottom: 1rem; }
 .game-meta span { color: var(--muted); }
 .game-meta strong { color: var(--text); }
+.game-meta #game-status { border: 1px solid var(--line); border-radius: 999px; padding: .15rem .6rem; }
+.game-meta #game-status.is-active { border-color: var(--accent); color: var(--accent); }
+.game-meta #game-status.is-paused { border-color: #f2cc60; color: #f2cc60; }
+.game-meta #game-status.is-over { border-color: #ff7b72; color: #ff7b72; }
 .game-canvas { background: #08100a; border: 1px solid var(--line); border-radius: .75rem; display: block; height: auto; image-rendering: pixelated; max-width: 100%; width: 22.5rem; }
 .game-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
 .button-secondary { background: transparent; border: 1px solid var(--line); color: var(--text); cursor: pointer; }
+.game-actions .button { cursor: pointer; touch-action: manipulation; }
 .button:disabled { cursor: not-allowed; opacity: .5; }
 .direction-pad { display: grid; gap: .5rem; grid-template-columns: repeat(3, 3.25rem); justify-content: center; margin: 1.25rem 0; }
 .direction-pad button { background: var(--surface); border: 1px solid var(--line); border-radius: .5rem; color: var(--text); cursor: pointer; font-size: 1.25rem; min-height: 3.25rem; touch-action: manipulation; }
