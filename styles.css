@@ -54,8 +54,13 @@ h2 { font-size: clamp(1.8rem, 4vw, 3.2rem); }
 .site-footer { color: var(--muted); margin: 0 auto; max-width: var(--content-width); padding: 2rem 1.5rem 3rem; }
 
 .site-nav a { font-size: .95rem; }
+.language-switch { display: flex; gap: .25rem; margin-left: 1rem; }
+.language-switch button { background: transparent; border: 1px solid transparent; border-radius: .35rem; color: var(--muted); cursor: pointer; font: inherit; padding: .35rem .5rem; }
+.language-switch button[aria-pressed="true"], .language-switch button:hover, .language-switch button:focus-visible { border-color: var(--line); color: var(--text); }
 
 @media (max-width: 48rem) {
+  .site-header { flex-wrap: wrap; gap: .75rem; }
+  .language-switch { margin-left: 0; order: 3; width: 100%; }
   .menu-toggle { background: transparent; border: 1px solid var(--line); border-radius: .4rem; color: var(--text); display: block; padding: .5rem .75rem; }
   .site-nav { background: var(--surface); border: 1px solid var(--line); border-radius: .5rem; display: none; flex-direction: column; gap: .25rem; padding: .75rem; position: absolute; right: 1.5rem; top: 4.5rem; }
   .site-nav.is-open { display: flex; }
